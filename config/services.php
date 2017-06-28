@@ -35,4 +35,18 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'FACEBOOK_SECRET' => ENV('FACEBOOK_SECRET'),
+    'GOOGLE_SECRET' => ENV('GOOGLE_SECRET'),
+    'TWITTER_KEY' => ENV('TWITTER_KEY'),
+    'TWITTER_SECRET' => ENV('TWITTER_SECRET'),
+    'TWITTER_TOKEN' => ENV('TWITTER_TOKEN'),
+    'TWITTER_TOKEN_SECRET' => ENV('TWITTER_TOKEN_SECRET'),
+
+    'url_facebook_token_access' => 'https://graph.facebook.com/v2.5/oauth/access_token',
+    'url_facebook_me' => 'https://graph.facebook.com/v2.5/me',
+    'url_account_google_token' => 'https://accounts.google.com/o/oauth2/token',
+    'url_google_me' => 'https://www.googleapis.com/plus/v1/people/me/openIdConnect',
+    'url_twitter_request_token' => 'https://api.twitter.com/oauth/request_token',
+    'url_twitter_access_token' => 'https://api.twitter.com/oauth/access_token',
+
 ];
