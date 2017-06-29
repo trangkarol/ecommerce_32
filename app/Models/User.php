@@ -21,6 +21,7 @@ class User extends Authenticatable
         'phone',
         'address',
         'gender',
+        'avatar',
     ];
 
     /**
@@ -32,6 +33,16 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function getGenderAttribute($value)
+    {
+        return $value ? 'male' : 'female';
+    }
 
     public function social()
     {

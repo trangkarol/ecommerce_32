@@ -11,6 +11,10 @@
 |
 */
 
+Route::group(['domain' => 'api.ecommerce.com'], function () {
+    
+});
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
