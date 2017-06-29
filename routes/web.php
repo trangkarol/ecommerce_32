@@ -30,6 +30,25 @@ Route::group(['domain' => 'api.ecommerce.com'], function () {
         Route::post('twitter', 'SocialController@twitter');
 
     });
+    // admin
+    Route::group([
+        'prefix' => 'admin',
+        'middleware' => [
+            'jwt.auth', 
+            'admin',
+        ],
+        'namespace' => 'Admin',
+    ], function () {
+        Route::resource('category', 'CategoryController', [
+            'only' => [
+                'index', 
+                'store', 
+                'show', 
+                'update', 
+                'destroy',
+            ],
+        ]);
+    });
 });
 
 Route::get('/', function () {

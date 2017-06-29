@@ -144,5 +144,83 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         data : {
             pageTitle : 'Project 1 - Home Page',
         },
+    })
+    /**
+     * admin
+     */
+    .state('admin', {
+        abstract : true,
+        views : {
+            'layout' : {
+                templateUrl : 'resources/assets/angularjs/app/admin/index.html',
+            },
+            'header@admin' : {
+                templateUrl : 'resources/assets/angularjs/app/admin/pages/header/header.html',
+                controller : 'AdminHeaderCtrl',
+            },
+            'footer@admin' : {
+                templateUrl : 'resources/assets/angularjs/app/admin/pages/footer/footer.html',
+            },
+            main : {}
+        },
+        data : {
+            bodyClass : 'hold-transition skin-blue sidebar-mini',
+        },
+        resolve : {
+            loginRequired : loginRequired,
+            isAdmin: isAdmin,
+        },
+    })
+    // category
+    .state('admin.category-list', {
+        url : '/admin/category-list',
+        views : {
+            'main@admin' : {
+                templateUrl : getLayout('admin', 'category-list'),
+                controller : 'CategoryListCtrl',
+            }
+        },
+        css : [
+            'resources/assets/angularjs/app/admin/css/AdminLTE.min.css',
+            'resources/assets/angularjs/app/admin/css/skins/_all-skins.min.css',
+            'node_modules/angular-loading-bar/build/loading-bar.min.css',
+        ],
+        data : {
+            pageTitle : 'Project 1 - Admin category list',
+        }
+    })
+    .state('admin.category-create', {
+        url : '/admin/category-create',
+        views : {
+            'main@admin' : {
+                templateUrl : getLayout('admin', 'category-create'),
+                controller : 'CategoryCreateCtrl',
+            }
+        },
+        css : [
+            'resources/assets/angularjs/app/admin/css/AdminLTE.min.css',
+            'resources/assets/angularjs/app/admin/css/skins/_all-skins.min.css',
+            'node_modules/angular-loading-bar/build/loading-bar.min.css',
+        ],
+        data : {
+            pageTitle : 'Project 1 - Admin category create',
+        }
+    })
+    .state('admin.category-edit', {
+        url : '/admin/category-edit/:name',
+        views : {
+            'main@admin' : {
+                templateUrl : getLayout('admin', 'category-edit'),
+                controller : 'CategoryEditCtrl',
+            }
+        },
+        css : [
+            'resources/assets/angularjs/app/admin/css/AdminLTE.min.css',
+            'resources/assets/angularjs/app/admin/css/skins/_all-skins.min.css',
+            'node_modules/angular-loading-bar/build/loading-bar.min.css',
+        ],
+        data : {
+            pageTitle : 'Project 1 - Admin category edit',
+        }
     });
 }
