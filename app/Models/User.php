@@ -22,6 +22,7 @@ class User extends Authenticatable
         'address',
         'gender',
         'avatar',
+        'is_admin'
     ];
 
     /**
@@ -37,6 +38,15 @@ class User extends Authenticatable
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function setAvatarAttribute($value)
+    {
+        if (!$value) {
+            $this->attributes['avatar'] = config('settings.path_image') . 'avatar/default.png';
+        } else {
+            $this->attributes['avatar'] = $value;
+        }
     }
 
     public function getGenderAttribute($value)
