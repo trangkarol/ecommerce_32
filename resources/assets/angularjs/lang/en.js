@@ -153,6 +153,8 @@ var translationsEN = {
             PRODUCT: 'Product',
             MORE_INFO: 'More Info',
             STATISTIC: 'Statistics',
+            OR: 'Or',
+            IMPORT: 'Import from CSV, excel',
         },
     },
 };

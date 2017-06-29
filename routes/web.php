@@ -48,6 +48,16 @@ Route::group(['domain' => 'api.ecommerce.com'], function () {
                 'destroy',
             ],
         ]);
+        Route::resource('product', 'CategoryController', [
+            'only' => [
+                'index', 
+                'store', 
+                'show', 
+                'destroy',
+            ],
+        ]);
+        Route::post('product/{id}', 'ProductController@update');
+        Route::post('import-products', 'ProductController@import');
     });
 });
 

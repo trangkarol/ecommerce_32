@@ -222,5 +222,59 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         data : {
             pageTitle : 'Project 1 - Admin category edit',
         }
+    })
+    // product
+    .state('admin.product-list', {
+        url : '/admin/product-list',
+        views : {
+            'main@admin' : {
+                templateUrl : getLayout('admin', 'product-list'),
+                controller : 'ProductListCtrl',
+            }
+        },
+        css : [
+            'resources/assets/angularjs/app/admin/css/AdminLTE.min.css',
+            'resources/assets/angularjs/app/admin/css/skins/_all-skins.min.css',
+            'node_modules/angular-datatables/dist/css/angular-datatables.min.css',
+            'node_modules/angular-loading-bar/build/loading-bar.min.css',
+        ],
+        data : {
+            pageTitle : 'Project 1 - Admin product list',
+        }
+    })
+    .state('admin.product-edit', {
+        url : '/admin/product-edit/:id',
+        views : {
+            'main@admin' : {
+                templateUrl : getLayout('admin', 'product-edit'),
+                controller : 'ProductEditCtrl',
+            }
+        },
+        css : [
+            'resources/assets/angularjs/app/admin/css/AdminLTE.min.css',
+            'resources/assets/angularjs/app/admin/css/skins/_all-skins.min.css',
+            'node_modules/angular-loading-bar/build/loading-bar.min.css',
+            'resources/assets/angularjs/app/admin/css/style.css',
+        ],
+        data : {
+            pageTitle : 'Project 1 - Admin product edit',
+        }
+    })
+    .state('admin.product-create', {
+        url : '/admin/product-create',
+        views : {
+            'main@admin' : {
+                templateUrl : getLayout('admin', 'product-create'),
+                controller : 'ProductCreateCtrl',
+            }
+        },
+        css : [
+            'resources/assets/angularjs/app/admin/css/AdminLTE.min.css',
+            'resources/assets/angularjs/app/admin/css/skins/_all-skins.min.css',
+            'node_modules/angular-loading-bar/build/loading-bar.min.css',
+        ],
+        data : {
+            pageTitle : 'Project 1 - Admin product create',
+        }
     });
 }
