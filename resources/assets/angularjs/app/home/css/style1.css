@@ -1,0 +1,66 @@
+form .search {
+    width: 88%;
+}
+
+form .sear-sub {
+    width: 12%;
+}
+.login .login-right {
+    width: 100%;
+}
+.sorting {
+    width: auto;
+    margin-right: 20px;
+}
+.sorting h6 {
+    margin-right: 10px;
+}
+.sorting a i {
+    font-size: 30px;
+}
+.no-pad-men {
+    margin-bottom: 20px;
+}
+.tree-list-pad {
+    padding: 30px 0px;
+}
+.avatar {
+    width: 150px;
+    height: auto;
+}
+.login-right {
+    width: 90%;
+}
+.product-easy {
+    padding: 0;
+}
+.ele-bottom-grid {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.timetable_sub td {
+    max-width: 300px;
+}
+.checkout-right-basket {
+    margin: 1em 0 0 0em;
+}
+.star-rating {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.star-rating .star {
+    padding: 1px;
+    color: #ddd;
+    font-size: 20px;
+    text-shadow: .05em .05em #aaa;
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.star-rating .star.filled {
+    color: #fd0;
+}
+.star-rating.readonly .star.filled {
+    color: #666;
+}

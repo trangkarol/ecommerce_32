@@ -59,6 +59,11 @@ Route::group(['domain' => 'api.ecommerce.com'], function () {
         Route::post('product/{id}', 'ProductController@update');
         Route::post('import-products', 'ProductController@import');
     });
+    // home
+    Route::group(['namespace' => 'Home'], function() {
+        Route::get('category', 'HomeController@getCategories');
+        Route::get('products-new', 'HomeController@getNewProducts');
+    });
 });
 
 Route::get('/', function () {
