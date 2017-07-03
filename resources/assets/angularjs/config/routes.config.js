@@ -276,5 +276,37 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         data : {
             pageTitle : 'Project 1 - Admin product create',
         }
+    })
+    .state('home.search', {
+        url : '/products?search',
+        views : {
+            'main@home' : {
+                templateUrl : getLayout('home', 'search'),
+                controller : 'SearchCtrl'
+            }
+        },
+        css : [
+            'resources/assets/angularjs/app/home/css/style.css',
+            'resources/assets/angularjs/app/home/css/style1.css',
+        ],
+        data : {
+            pageTitle : 'Project 1 - search',
+        }
+    })
+    .state('home.product-list', {
+        url : '/:name',
+        views : {
+            'main@home' : {
+                templateUrl : getLayout('home', 'product-list'),
+                controller : 'ProductsCtrl'
+            }
+        },
+        css : [
+            'resources/assets/angularjs/app/home/css/style.css',
+            'resources/assets/angularjs/app/home/css/style1.css',
+        ],
+        data : {
+            pageTitle : 'Project 1 - product list',
+        }
     });
 }
