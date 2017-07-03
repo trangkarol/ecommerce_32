@@ -30,6 +30,7 @@ var translationsEN = {
         BUTTON_UPDATE: 'Update',
         OLD_PASSWORD: 'Old password',
         NEW_PASSWORD: 'New password',
+        MANAGE: 'Manage'
     },
 
     LB_SEARCH_TEXT: 'Search',
