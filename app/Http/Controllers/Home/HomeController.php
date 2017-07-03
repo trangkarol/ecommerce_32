@@ -29,4 +29,40 @@ class HomeController extends Controller
 
         return Response()->json(['categories' => $categories], 200);
     }
+
+    public function getProductsByCategory(Request $request, $name)
+    {
+        try {
+            $category = Category::where('slug', '=', $name)->firstOrFail();
+        } catch (ModelNotFoundException $ex) {
+            return Response()->json([$ex], 404);
+        }
+
+        $categoryId = $category->id;
+        $products = Product::with('images')
+            ->with('category')
+            ->where('category_id', '=', $categoryId);
+        if ($request->name) {
+            $products = $products->orderBy('name', $request->name);
+        }
+        if ($request->price) {
+            $products = $products->orderBy('price', $request->price);
+        }
+        if ($request->rate) {
+            $products = $products->orderBy('rate', $request->rate);
+        }
+        $products = $products->paginate(config('settings.paginate'));
+
+        return Response()->json(['products' => $products], 200);
+    }
+
+    public function getProductsSearch(Request $request)
+    {
+        $products = Product::with('images')
+            ->with('category')
+            ->where('name', 'LIKE', "%{$request->search}%")
+            ->paginate(config('settings.search_paginate'));
+
+        return Response()->json(['products' => $products], 200);
+    }
 }

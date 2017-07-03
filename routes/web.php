@@ -63,6 +63,8 @@ Route::group(['domain' => 'api.ecommerce.com'], function () {
     Route::group(['namespace' => 'Home'], function() {
         Route::get('category', 'HomeController@getCategories');
         Route::get('products-new', 'HomeController@getNewProducts');
+        Route::get('search', 'HomeController@getProductsSearch');
+        Route::get('{name}', 'HomeController@getProductsByCategory');
     });
 });
 
