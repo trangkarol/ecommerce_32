@@ -1,5 +1,5 @@
 App
-.controller('ProfileCtrl', function($scope, $state, $auth, auth, $stateParams, FileUploader) {
+.controller('ProfileCtrl', function($scope, $state, $auth, auth, $stateParams, FileUploader, API) {
     auth.profile()
     .then(function(response) {
         $scope.user = response.user;
@@ -33,4 +33,14 @@ App
             $scope.user = response.user;
         })
     }
-});
+
+    $scope.detail = function(order) {
+        var orderDetail = API.service(order.id);
+        orderDetail.getOrderDetail()
+        .then(function(response) {
+            console.log(response);
+            $scope.order = order;
+            $scope.orderItems = response.orderItems;
+        })
+    }
+})

@@ -30,7 +30,15 @@ var translationsEN = {
         BUTTON_UPDATE: 'Update',
         OLD_PASSWORD: 'Old password',
         NEW_PASSWORD: 'New password',
-        MANAGE: 'Manage'
+        MANAGE: 'Manage',
+        ORDER: 'Order',
+        PRODUCT_NAME: 'Product name',
+        PRICE: 'Price',
+        RATE: 'Rate',
+        QUANTITY: 'Quantity',
+        VIEW: 'View',
+        CREATED_AT: 'Created at',
+        BACK: 'Back',
     },
 
     LB_SEARCH_TEXT: 'Search',
