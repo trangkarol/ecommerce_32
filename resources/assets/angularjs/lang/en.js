@@ -99,6 +99,13 @@ var translationsEN = {
         TOTAL: 'Total',
         CLEAR_SHOPPING_CART: 'CLEAR SHOPPING CART',
         SHOPPING_BASKET: 'Shopping basket',
+        USER_NAME: 'User name',
+        USER_EMAIL: 'Email',
+        USER_PHONE: 'Phone',
+        USER_ADDRESS: 'Address',
+        BACK: 'Back',
+        ORDER: 'Order',
+        CHECK_OUT: 'Check out',
     },
     SUGGEST: {
         SUGGEST_TITLE: 'Suggest',
