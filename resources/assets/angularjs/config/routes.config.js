@@ -308,5 +308,22 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         data : {
             pageTitle : 'Project 1 - product list',
         }
+    })
+    .state('home.product-detail', {
+        url : '/product/:name',
+        views : {
+            'main@home' : {
+                templateUrl : getLayout('home', 'product-detail'),
+                controller : 'ProductDetailCtrl'
+            }
+        },
+        css : [
+            'resources/assets/angularjs/app/home/css/style.css',
+            'resources/assets/angularjs/app/home/css/flexslider.css',
+            'resources/assets/angularjs/app/home/css/style1.css',
+        ],
+        data : {
+            pageTitle : 'Project 1 - product detail',
+        }
     });
 }

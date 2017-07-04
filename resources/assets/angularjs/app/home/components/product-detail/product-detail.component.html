@@ -1,0 +1,69 @@
+<div class="single">
+    <div class="container">
+        <div class="col-md-6 single-right-left animated wow slideInUp animated">
+            <flex-slider flex-slide="img in images" animation="slide">
+                <li>
+                    <img ng-src="{{ img }}">
+                </li>
+            </flex-slider>
+        </div>
+        <div class="col-md-6 single-right-left simpleCart_shelfItem animated wow slideInRight animated">
+            <h3>{{ product.name }}</h3>
+            <p><span class="item_price">{{ product.price | currency }}</span></p>
+            <div class="rating1">
+                <h4>{{ 'PRODUCT_DETAIL.RATE' | translate }}: {{ product.rate }} </h4>
+            </div>
+            <div ng-if="isAuthenticated">
+                <star-rating ng-model="rating" 
+                max="10" 
+                on-rating-select="rate(rating)" 
+                readonly="!isReadonly"></star-rating>
+            </div>
+            <div class="rating1">
+                <div fb-like="like.Url"></div>
+            </div>
+            <div class="occasion-cart">
+                <a href="" 
+                    class="item_add hvr-outline-out button2" 
+                    ng-click="cart.addItem(product.id, product.name, product.images[0].image, product.price, 1)">
+                    {{ 'PRODUCT_DETAIL.ADD_TO_CART' | translate }}
+                </a>
+            </div>
+
+        </div>
+        <div class="clearfix"> </div>
+
+        <div class="bootstrap-tab animated wow slideInUp animated">
+            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" ng-class="{ active: isSet(1) }">
+                        <a href="" id="" role="tab" data-toggle="tab" aria-expanded="false" ng-click="setTab(1)">
+                            {{ 'PRODUCT_DETAIL.DESCRIPTION' | translate }}
+                        </a>
+                    </li>
+                    <li role="presentation" ng-class="{ active: isSet(2) }">
+                        <a href="" role="tab" id="" data-toggle="tab"  ng-click="setTab(2)">
+                            {{ 'PRODUCT_DETAIL.COMMENT' | translate }}
+                        </a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" 
+                    class="tab-pane fade bootstrap-tab-text in" 
+                    ng-class="{ active: isSet(1) }">
+                        <h5>{{ 'PRODUCT_DETAIL.PRODUCT_DESCRIPTION' | translate }}</h5>
+                        <p>{{ product.description }}</p>
+                    </div>
+                    <div role="tabpanel" 
+                    class="tab-pane fade bootstrap-tab-text in" ng-class="{ active: isSet(2) }">
+                        <div class="fb-comments" 
+                        dyn-fb-comment-box page-href="{{ curPath }}" 
+                        data-numposts="5" 
+                        data-colorscheme="light" 
+                        data-width="100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

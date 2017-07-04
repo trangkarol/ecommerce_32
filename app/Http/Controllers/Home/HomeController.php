@@ -65,4 +65,18 @@ class HomeController extends Controller
 
         return Response()->json(['products' => $products], 200);
     }
+
+    public function getProduct($name)
+    {
+        try {
+            $product = Product::where('slug', '=', $name)
+                ->with('images')
+                ->with('category')
+                ->firstOrFail();
+        } catch (ModelNotFoundException $ex) {
+            return Response()->json([$ex], 404);
+        }
+        
+        return Response()->json(['product' => $product], 200);
+    }
 }
