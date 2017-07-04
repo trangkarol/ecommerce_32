@@ -48,7 +48,7 @@ Route::group(['domain' => 'api.ecommerce.com'], function () {
                 'destroy',
             ],
         ]);
-        Route::resource('product', 'CategoryController', [
+        Route::resource('product', 'ProductController', [
             'only' => [
                 'index', 
                 'store', 
