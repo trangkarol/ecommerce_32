@@ -22,6 +22,11 @@ return [
             'update' => 'suggest updated successfuly',
             'delete' => 'suggest deleted successfuly',
         ],
+        'order' => [
+            'create' => 'order created successfuly',
+            'update' => 'order updated successfuly',
+            'delete' => 'order deleted successfuly',
+        ],
     ],
     'fails' => [
         'login' => [
@@ -45,6 +50,11 @@ return [
             'update' => 'product can not update',
             'create' => 'product can not create',
             'delete' => 'product can not delete',
+        ],
+        'order' => [
+            'update' => 'order can not update',
+            'create' => 'order can not create',
+            'delete' => 'order can not delete',
         ],
     ],
 ];
